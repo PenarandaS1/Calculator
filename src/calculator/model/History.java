@@ -2,28 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package calculator;
+package calculator.model;
 
 import java.util.ArrayList;
+import calculator.model.Operation;
 
 /**
  *
- * @author edangulo
+ * @author RYZEN
  */
 public class History {
-    
-    private ArrayList<Operation> operations;
+
+    private ArrayList<calculator.model.Operation> operations;
 
     public History() {
         this.operations = new ArrayList<>();
     }
-    
-    public void addOperation(Operation operation) {
+
+    public void addOperation(calculator.model.Operation operation) {
         this.operations.add(operation);
     }
 
-    public ArrayList<Operation> getOperations() {
+    public ArrayList<calculator.model.Operation> getOperations() {
         return operations;
     }
-    
 }
