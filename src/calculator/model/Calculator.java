@@ -4,12 +4,16 @@
  */
 package calculator.model;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author RYZEN
  */
 public class Calculator {
 
+    DecimalFormat df = new DecimalFormat("#.###");
+    
     public double result(double result) {
         return result;
     }
