@@ -21,7 +21,11 @@ public class Operation {
         this.operator = operator;
         this.result = result;
     }
-    
+
+    public double getResult() {
+        return result;
+    }
+
     
 
     @Override

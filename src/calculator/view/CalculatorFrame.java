@@ -4,9 +4,12 @@
  */
 package calculator.view;
 
-import calculator.model.Calculator;
+import calculator.Status;
+import calculator.controllers.AddController;
 import calculator.model.History;
 import calculator.model.Operation;
+import calculator.utils.Response;
+import calculator.model.storage.Storage;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.DefaultListModel;
@@ -215,75 +218,92 @@ public class CalculatorFrame extends javax.swing.JFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
-        try {
-            Calculator calculator = new Calculator();
-            
-            double number1 = Double.parseDouble(number1TextField.getText());
-            double number2 = Double.parseDouble(number2TextField.getText());
-            double result = calculator.add(number1, number2);
-            
-            this.history.addOperation(new Operation(number1, number2, "+", result));
-            
-            resultTextField.setText("" + result);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        String number1 = number1TextField.getText();
+        String number2 = number2TextField.getText();
+
+        Response response = AddController.addNumbers(number1, number2);
+
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            resultTextField.setText("" + response.getObject().getResult());
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
         }
+
     }//GEN-LAST:event_addActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
         // TODO add your handling code here:
-        try {
-            Calculator calculator = new Calculator();
-            
-            double number1 = Double.parseDouble(number1TextField.getText());
-            double number2 = Double.parseDouble(number2TextField.getText());
-            double result = calculator.subtract(number1, number2);
-            
-            this.history.addOperation(new Operation(number1, number2, "-", result));
-            
-            resultTextField.setText("" + result);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        String number1 = number1TextField.getText();
+        String number2 = number2TextField.getText();
+
+        Response response = AddController.addNumbers(number1, number2);
+
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            resultTextField.setText("" + response.getObject().getResult());
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
         }
+
     }//GEN-LAST:event_substractActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
         // TODO add your handling code here:
-        try {
-            Calculator calculator = new Calculator();
-            
-            double number1 = Double.parseDouble(number1TextField.getText());
-            double number2 = Double.parseDouble(number2TextField.getText());
-            double result = calculator.multiply(number1, number2);
-            
-            this.history.addOperation(new Operation(number1, number2, "*", result));
-            
-            resultTextField.setText("" + result);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        String number1 = number1TextField.getText();
+        String number2 = number2TextField.getText();
+
+        Response response = AddController.addNumbers(number1, number2);
+
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            resultTextField.setText("" + response.getObject().getResult());
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
         }
+
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
         // TODO add your handling code here:
-        try {
-            Calculator calculator = new Calculator();
-            
-            double number1 = Double.parseDouble(number1TextField.getText());
-            double number2 = Double.parseDouble(number2TextField.getText());
-            double result = calculator.divide(number1, number2);
-            
-            this.history.addOperation(new Operation(number1, number2, "/", result));
-            
-            resultTextField.setText("" + result);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        String number1 = number1TextField.getText();
+        String number2 = number2TextField.getText();
+
+        Response response = AddController.addNumbers(number1, number2);
+
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            resultTextField.setText("" + response.getObject().getResult());
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
         }
+
     }//GEN-LAST:event_divideActionPerformed
 
     private void potencyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potencyActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Not Implemented", "Error", JOptionPane.ERROR_MESSAGE);
+        String number1 = number1TextField.getText();
+        String number2 = number2TextField.getText();
+
+        Response response = AddController.addNumbers(number1, number2);
+
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            resultTextField.setText("" + response.getObject().getResult());
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
+        }
+
     }//GEN-LAST:event_potencyActionPerformed
 
     private void clear_numbersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_numbersActionPerformed
@@ -295,12 +315,15 @@ public class CalculatorFrame extends javax.swing.JFrame {
 
     private void update_historyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_historyActionPerformed
         // TODO add your handling code here:
+        
         ArrayList<Operation> operationHistory = this.history.getOperations();
         Collections.reverse(this.history.getOperations());
         
         DefaultListModel model = new DefaultListModel();
         model.addAll(operationHistory);
         historyList.setModel(model);
+        
+        
     }//GEN-LAST:event_update_historyActionPerformed
 
     /**
