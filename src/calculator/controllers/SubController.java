@@ -4,12 +4,13 @@
  */
 package calculator.controllers;
 
-import calculator.Status;
+
 import calculator.model.Calculator;
 import calculator.model.Operation;
 import calculator.model.operations.Substract;
 import calculator.model.storage.Storage;
 import calculator.utils.Response;
+import calculator.utils.Status;
 
 /**
  *

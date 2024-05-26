@@ -10,21 +10,8 @@ package calculator.model;
  */
 public class Calculator {
 
-    
-
-    
-
-    
-
-    
-    
-    public double potency(double a, double b){
-        return Math.pow(a, b);
-    }
-
     public double result(double result) {
         return result;
     }
-    
-   
+
 }
