@@ -4,7 +4,6 @@
  */
 package calculator.controllers;
 
-
 import calculator.model.Calculator;
 import calculator.model.Operation;
 import calculator.model.operations.Add;

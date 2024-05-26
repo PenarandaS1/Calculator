@@ -3,8 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documentos/Proyectos/Repositories/Calculator/src/calculator/History.java</file>
-            <file>file:/D:/Documentos/Proyectos/Repositories/Calculator/src/calculator/CalculatorFrame.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/main/Main.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/model/storage/Storage.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/model/operations/Add.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/controllers/AddController.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/utils/Status.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/controllers/SubController.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/model/Calculator.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/model/operations/Potency.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/utils/Response.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/controllers/MultiController.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/view/CalculatorFrame.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/controllers/PotencyController.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/model/operations/Substract.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/model/operations/Divide.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/controllers/DivController.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/model/Operation.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/model/History.java</file>
+            <file>file:/C:/Users/RYZEN/OneDrive/Escritorio/Calculator/src/calculator/model/operations/Multiply.java</file>
         </group>
     </open-files>
 </project-private>

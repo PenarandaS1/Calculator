@@ -5,7 +5,9 @@
 package calculator.model;
 
 import java.util.ArrayList;
-import calculator.model.Operation;
+import java.util.Collections;
+import javax.swing.DefaultListModel;
+
 
 /**
  *
@@ -26,4 +28,19 @@ public class History {
     public ArrayList<calculator.model.Operation> getOperations() {
         return operations;
     }
+    
+    public History(ArrayList<calculator.model.Operation> storage) {
+        this.operations = storage;
+    }
+    
+    public DefaultListModel history() {
+        ArrayList<Operation> operationHistory = getOperations();
+        Collections.reverse(operationHistory);
+
+        DefaultListModel model = new DefaultListModel();
+        model.addAll(operationHistory);
+        
+        return model;
+    }
+    
 }

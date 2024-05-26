@@ -4,7 +4,6 @@
  */
 package calculator.controllers;
 
-
 import calculator.model.Calculator;
 import calculator.model.Operation;
 import calculator.model.operations.Multiply;
@@ -17,6 +16,7 @@ import calculator.utils.Status;
  * @author RYZEN
  */
 public class MultiController {
+
     public static Response multiNumbers(String number1, String number2) {
         try {
             double num1, num2;
@@ -48,7 +48,7 @@ public class MultiController {
             }
             Calculator calculator = new Calculator();
             Storage storage = Storage.getInstance();
-            Operation operation = new Operation(num1, num2, "*", calculator.result(Multiply.multiply(num1,num2)));
+            Operation operation = new Operation(num1, num2, "*", calculator.result(Multiply.multiply(num1, num2)));
             storage.addOperation(operation);
             return new Response("Successful operation", Status.OK, operation);
         } catch (Exception ex) {

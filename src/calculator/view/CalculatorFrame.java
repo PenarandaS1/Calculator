@@ -4,15 +4,14 @@
  */
 package calculator.view;
 
-import calculator.utils.Status;
 import calculator.controllers.AddController;
+import calculator.controllers.DivController;
+import calculator.controllers.HistoryController;
+import calculator.controllers.MultiController;
+import calculator.controllers.PotencyController;
+import calculator.controllers.SubController;
 import calculator.model.History;
-import calculator.model.Operation;
 import calculator.utils.Response;
-import calculator.model.storage.Storage;
-import java.util.ArrayList;
-import java.util.Collections;
-import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,14 +19,14 @@ import javax.swing.JOptionPane;
  * @author edangulo
  */
 public class CalculatorFrame extends javax.swing.JFrame {
-    
+
     private History history;
 
     /**
      * Creates new form Calculator
      */
     public CalculatorFrame() {
-        this.history = new History();
+        
         initComponents();
     }
 
@@ -231,6 +230,10 @@ public class CalculatorFrame extends javax.swing.JFrame {
             resultTextField.setText("" + response.getObject().getResult());
             JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
         }
+        
+        number1TextField.setText("");
+        number2TextField.setText("");
+        resultTextField.setText("");
 
     }//GEN-LAST:event_addActionPerformed
 
@@ -239,7 +242,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         String number1 = number1TextField.getText();
         String number2 = number2TextField.getText();
 
-        Response response = AddController.addNumbers(number1, number2);
+        Response response = SubController.subNumbers(number1, number2);
 
         if (response.getStatus() >= 500) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
@@ -249,6 +252,10 @@ public class CalculatorFrame extends javax.swing.JFrame {
             resultTextField.setText("" + response.getObject().getResult());
             JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
         }
+        
+        number1TextField.setText("");
+        number2TextField.setText("");
+        resultTextField.setText("");
 
     }//GEN-LAST:event_substractActionPerformed
 
@@ -257,7 +264,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         String number1 = number1TextField.getText();
         String number2 = number2TextField.getText();
 
-        Response response = AddController.addNumbers(number1, number2);
+        Response response = MultiController.multiNumbers(number1, number2);
 
         if (response.getStatus() >= 500) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
@@ -267,6 +274,10 @@ public class CalculatorFrame extends javax.swing.JFrame {
             resultTextField.setText("" + response.getObject().getResult());
             JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
         }
+        
+        number1TextField.setText("");
+        number2TextField.setText("");
+        resultTextField.setText("");
 
     }//GEN-LAST:event_multiplyActionPerformed
 
@@ -275,7 +286,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         String number1 = number1TextField.getText();
         String number2 = number2TextField.getText();
 
-        Response response = AddController.addNumbers(number1, number2);
+        Response response = DivController.divNumbers(number1, number2);
 
         if (response.getStatus() >= 500) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
@@ -285,6 +296,10 @@ public class CalculatorFrame extends javax.swing.JFrame {
             resultTextField.setText("" + response.getObject().getResult());
             JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
         }
+        
+        number1TextField.setText("");
+        number2TextField.setText("");
+        resultTextField.setText("");
 
     }//GEN-LAST:event_divideActionPerformed
 
@@ -293,7 +308,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         String number1 = number1TextField.getText();
         String number2 = number2TextField.getText();
 
-        Response response = AddController.addNumbers(number1, number2);
+        Response response = PotencyController.potencyNumbers(number1, number2);
 
         if (response.getStatus() >= 500) {
             JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
@@ -303,6 +318,10 @@ public class CalculatorFrame extends javax.swing.JFrame {
             resultTextField.setText("" + response.getObject().getResult());
             JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
         }
+        
+        number1TextField.setText("");
+        number2TextField.setText("");
+        resultTextField.setText("");
 
     }//GEN-LAST:event_potencyActionPerformed
 
@@ -315,19 +334,22 @@ public class CalculatorFrame extends javax.swing.JFrame {
 
     private void update_historyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_historyActionPerformed
         // TODO add your handling code here:
+
+        Response response = HistoryController.updateHistory();
         
-        ArrayList<Operation> operationHistory = this.history.getOperations();
-        Collections.reverse(this.history.getOperations());
-        
-        DefaultListModel model = new DefaultListModel();
-        model.addAll(operationHistory);
-        historyList.setModel(model);
-        
-        
+        if (response.getStatus() >= 500) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.ERROR_MESSAGE);
+        } else if (response.getStatus() >= 400) {
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Error " + response.getStatus(), JOptionPane.WARNING_MESSAGE);
+        } else {
+            resultTextField.setText("" + response.getObject().getResult());
+            JOptionPane.showMessageDialog(null, response.getMessage(), "Response Message", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_update_historyActionPerformed
 
 
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add;
     private javax.swing.JButton clear_numbers;

@@ -12,7 +12,7 @@ import calculator.model.Operation;
  * @author RYZEN
  */
 public class Response {
-    
+
     private String message;
     private int status;
     private Operation object;
@@ -22,13 +22,13 @@ public class Response {
         this.message = message;
         this.status = status;
     }
-    
+
     public Response(String message, int status, Operation object) {
         this.message = message;
         this.status = status;
         this.object = object;
     }
-    
+
     public Response(String message, int status, History history) {
         this.message = message;
         this.status = status;
@@ -50,5 +50,5 @@ public class Response {
     public History getHistory() {
         return history;
     }
-    
+
 }
